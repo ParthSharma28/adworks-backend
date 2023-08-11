@@ -91,7 +91,7 @@ const uploadProduct = (req,res)=>{
             const newProduct = Product({
                 name:req.body.name,
                 owner:req.body.owner,
-                image:`http://${process.env.SERVER}:${process.env.PORT}/${req.file.filename}`,
+                image:`${process.env.SERVER}/${req.file.filename}`,
                 description:req.body.description,
             });
             newProduct.save()
