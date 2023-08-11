@@ -64,7 +64,7 @@ const signUpUser = async (req,res)=>{
                 username:req.body.username,
                 email:req.body.email,
                 password:req.body.password,
-                image:`http://${process.env.SERVER}:${process.env.PORT}/${req.file.filename}`,
+                image:`${process.env.SERVER}/${req.file.filename}`,
             });
             newUser.save()
                 .then((user)=>{
